@@ -2,3 +2,5 @@ streamlit
 pandas
 scikit-learn
 streamlit-option-menu
+matplotlib
+seaborn

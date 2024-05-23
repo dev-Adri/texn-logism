@@ -1,1 +1,1 @@
-to run the app -> streamlit app.py
+to run the app -> streamlit run app.py
