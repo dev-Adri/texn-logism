@@ -2,13 +2,13 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
+from sklearn.cluster import DBSCAN, KMeans
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 from sklearn.impute import SimpleImputer
-
 from streamlit_option_menu import option_menu
-
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -22,6 +22,40 @@ selected = option_menu(
     icons=["house", "graph-up", "robot"],
     orientation="horizontal",
 )
+
+#MARK: DEFS
+def calculate_wcss(X, max_k):
+    wcss = []
+    for k in range(1, max_k + 1):
+        kmeans = KMeans(n_clusters=k, init='k-means++', random_state=42)
+        kmeans.fit(X)
+        wcss.append(kmeans.inertia_)
+    return wcss
+
+def calculate_silhouette_score(X, max_k):
+    silhouette_scores = []
+    for k in range(2, max_k + 1):
+        kmeans = KMeans(n_clusters=k, init='k-means++', random_state=42)
+        kmeans.fit(X)
+        labels = kmeans.labels_
+        silhouette_scores.append(silhouette_score(X, labels))
+    return silhouette_scores
+
+
+def clustering_error(X, max_K):
+
+    wcss_values = calculate_wcss(X, max_K)
+    silhouette_scores = calculate_silhouette_score(X, max_K)
+
+    # Normalize silhouette scores
+    silhouette_scores = np.array(silhouette_scores)
+    silhouette_scores_norm = (silhouette_scores - silhouette_scores.min()) / (silhouette_scores.max() - silhouette_scores.min())
+    
+    # Combine metrics
+    combined_metric = silhouette_scores_norm - (wcss_values / max(wcss_values))
+
+    return combined_metric.max()
+
 
 def preprocess_data(df):
     df = df.copy()
@@ -57,7 +91,7 @@ def read(uploaded_file):
 if "file_pd" not in st.session_state:
     st.session_state.file_pd = None
     
-if "preprocessed" not in st.session_state:
+if "preprocessed" not in st.session_state: 
     st.session_state.preprocessed = False
     
 if "processed_data" not in st.session_state:
@@ -229,19 +263,43 @@ elif selected == "Machine Learning":
                     
             with clustering:
                 st.header("Clustering Algorithms")
+
+                num_clusters = st.slider("Select number of clusters", min_value=2, max_value=10, value=2)
                 
                 if st.button("Run K-Means Clustering"):
                     X = st.session_state.processed_data
-                    kmeans = KMeans(n_clusters=3, random_state=42)
-                    kmeans.fit(X)
-                    clusters = kmeans.labels_
-                    
-                    st.subheader("Silhouette Score")
-                    score = silhouette_score(X, clusters)
-                    st.text(f"Silhouette Score: {score}")
-                    
+
+                    max_silhouette = -2
+                    best_clusters = None
+                    best_centroids = None
+
+                    for i in range(2):
+                        kmeans = KMeans(n_clusters=num_clusters, random_state=42+i*3)
+                        kmeans.fit(X)
+                        clusters = kmeans.labels_
+                        centroids = kmeans.cluster_centers_
+
+                        silhouette = silhouette_score(X, clusters)
+
+                        print (f"Iteration {i}")
+                        print (f"Silhouette score: {silhouette:.3f}")
+
+                        if silhouette > max_silhouette: 
+                            max_silhouette = silhouette
+                            best_clusters = clusters
+                            best_centroids = centroids
+
+                    clusters = best_clusters
+                    centroids = best_centroids
+                    silhouette = max_silhouette
+
                     st.subheader("Cluster Centers")
                     st.dataframe(pd.DataFrame(kmeans.cluster_centers_, columns=X.columns))
+
+
+                    silhouette_avg = silhouette_score(X, clusters)
+                    st.write(f"The silhouette score is: {silhouette_avg:.3f}")
+
                     
                     st.subheader("Cluster Visualization")
                     pca = PCA(n_components=2)
@@ -252,3 +310,22 @@ elif selected == "Machine Learning":
                     plt.ylabel('PCA Component 2')
                     plt.title('K-Means Clustering')
                     st.pyplot(plt.gcf())
+                    
+                elif st.button("Run DBSCAN Clustering"):
+                    X = st.session_state.processed_data
+
+                    dbscan = DBSCAN(eps=0.5, min_samples=5)
+                    clusters = dbscan.fit_predict(X)
+
+                    st.subheader("Cluster Visualization")
+                    pca = PCA(n_components=2)
+                    pca_data = pca.fit_transform(X)
+                    plt.figure(figsize=(10, 6))
+                    plt.scatter(pca_data[:, 0], pca_data[:, 1], c=clusters, cmap='viridis')
+                    plt.xlabel('PCA Component 1')
+                    plt.ylabel('PCA Component 2')
+                    plt.title('DBSCAN Clustering')
+                    st.pyplot(plt.gcf())
+
+                    
+#-------------------------------------------------------------------------------------------------------------#
