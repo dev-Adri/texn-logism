@@ -1,4 +1,3 @@
-# Έχουμε κάνει μέχρι και το 3
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -11,8 +10,13 @@ from sklearn.impute import SimpleImputer
 from streamlit_option_menu import option_menu
 
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
 
-selected = option_menu(
+selected = option_menu(     
     menu_title=None,
     options=["Home", "2D-Visualization", "Machine Learning"],
     icons=["house", "graph-up", "robot"],
@@ -79,7 +83,7 @@ if selected == "Home":
             
 elif selected == "2D-Visualization":
     if st.session_state.file_pd is None:
-        st.title("You have not uploaded any data.")
+        st.title("You haven't uploaded any data yet.")
         st.text("Please go back to the home page and upload a CSV or Excel file.")
     else:
         st.title("2D Visualization")
@@ -131,18 +135,24 @@ elif selected == "2D-Visualization":
                     placeholder = st.empty()
                     placeholder.text("Generating t-SNE graph...")
                     
-                    tsne = TSNE(n_components=2, perplexity=30)
-                    tsne_data = tsne.fit_transform(st.session_state.processed_data)
-                    
-                    plt.figure(figsize=(10, 6))
-                    plt.scatter(tsne_data[:, 0], tsne_data[:, 1])
-                    plt.xlabel('X')
-                    plt.ylabel('Y')
-                    plt.title('t-SNE')
-                    
-                    st.pyplot(plt.gcf())
-                    placeholder.empty()
-        
+                    # Check the number of samples and adjust perplexity
+                    n_samples = st.session_state.processed_data.shape[0]
+                    perplexity = min(20, n_samples - 1)
+
+                    try:
+                        tsne = TSNE(n_components=2, perplexity=perplexity)
+                        tsne_data = tsne.fit_transform(st.session_state.processed_data)
+                        plt.figure(figsize=(10, 6))
+                        plt.scatter(tsne_data[:, 0], tsne_data[:, 1])
+                        plt.xlabel('X')
+                        plt.ylabel('Y')
+                        plt.title('t-SNE')
+                        st.pyplot(plt.gcf())
+                        placeholder.empty()
+                    except Exception as e:
+                        placeholder.error(f"Error during t-SNE computation: {e}")
+
+                
         with eda:
             # st.session_state.processed_data -> Proccesed data (used for PCA and t-SNE)
             # st.session_state.file_pd -> Unprocessed data
@@ -186,7 +196,7 @@ elif selected == "2D-Visualization":
 
 elif selected == "Machine Learning":
     if st.session_state.file_pd is None:
-        st.title("You have not uploaded any data.")
+        st.title("You haven't uploaded any data yet.")
         st.text("Please go back to the home page and upload a CSV or Excel file.")
     else:
         if st.session_state.preprocessed == False:
@@ -197,7 +207,48 @@ elif selected == "Machine Learning":
             classification, clustering = st.tabs(["Classification algorithms", "Clustering algorithms"])
             
             with classification:
-                st.write("Edw tha valoume ton xristi na epilegei kapies parametrous ...")
+                st.header("Classification Algorithms")
                 
+                target = st.selectbox("Select the target variable", st.session_state.processed_data.columns)
+                if st.button("Run Random Forest Classifier"):
+                    X = st.session_state.processed_data.drop(columns=[target])
+                    y = st.session_state.processed_data[target]
+                    
+                    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                    classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+                    classifier.fit(X_train, y_train)
+                    y_pred = classifier.predict(X_test)
+                    
+                    st.subheader("Classification Report")
+                    st.text(classification_report(y_test, y_pred, zero_division=0))
+                    
+                    st.subheader("Confusion Matrix")
+                    fig, ax = plt.subplots()
+                    sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt='d', cmap='Blues', ax=ax)
+                    st.pyplot(fig)
+                    
             with clustering:
-                st.write("Edw tha valoume ton xristi na epilegei kapies parametrous 2 ...")
+                st.header("Clustering Algorithms")
+                
+                if st.button("Run K-Means Clustering"):
+                    X = st.session_state.processed_data
+                    kmeans = KMeans(n_clusters=3, random_state=42)
+                    kmeans.fit(X)
+                    clusters = kmeans.labels_
+                    
+                    st.subheader("Silhouette Score")
+                    score = silhouette_score(X, clusters)
+                    st.text(f"Silhouette Score: {score}")
+                    
+                    st.subheader("Cluster Centers")
+                    st.dataframe(pd.DataFrame(kmeans.cluster_centers_, columns=X.columns))
+                    
+                    st.subheader("Cluster Visualization")
+                    pca = PCA(n_components=2)
+                    pca_data = pca.fit_transform(X)
+                    plt.figure(figsize=(10, 6))
+                    plt.scatter(pca_data[:, 0], pca_data[:, 1], c=clusters, cmap='viridis')
+                    plt.xlabel('PCA Component 1')
+                    plt.ylabel('PCA Component 2')
+                    plt.title('K-Means Clustering')
+                    st.pyplot(plt.gcf())
