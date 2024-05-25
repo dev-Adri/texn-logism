@@ -1,20 +1,22 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
+import seaborn as sns   
 import numpy as np
 
-from sklearn.cluster import DBSCAN, KMeans
+from sklearn.metrics import accuracy_score, f1_score
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
+from scipy.spatial.distance import cdist, pdist
+from sklearn.mixture import GaussianMixture
+from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 from sklearn.impute import SimpleImputer
 from streamlit_option_menu import option_menu
-from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+from sklearn.preprocessing import  LabelEncoder
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, confusion_matrix
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
+from sklearn.metrics import silhouette_score, davies_bouldin_score
 
 selected = option_menu(     
     menu_title=None,
@@ -23,39 +25,35 @@ selected = option_menu(
     orientation="horizontal",
 )
 
-#MARK: DEFS
-def calculate_wcss(X, max_k):
-    wcss = []
-    for k in range(1, max_k + 1):
-        kmeans = KMeans(n_clusters=k, init='k-means++', random_state=42)
-        kmeans.fit(X)
-        wcss.append(kmeans.inertia_)
-    return wcss
-
-def calculate_silhouette_score(X, max_k):
-    silhouette_scores = []
-    for k in range(2, max_k + 1):
-        kmeans = KMeans(n_clusters=k, init='k-means++', random_state=42)
-        kmeans.fit(X)
-        labels = kmeans.labels_
-        silhouette_scores.append(silhouette_score(X, labels))
-    return silhouette_scores
-
-
-def clustering_error(X, max_K):
-
-    wcss_values = calculate_wcss(X, max_K)
-    silhouette_scores = calculate_silhouette_score(X, max_K)
-
-    # Normalize silhouette scores
-    silhouette_scores = np.array(silhouette_scores)
-    silhouette_scores_norm = (silhouette_scores - silhouette_scores.min()) / (silhouette_scores.max() - silhouette_scores.min())
+def dunn_index(X, labels):
+    # Find all unique clusters
+    unique_clusters = np.unique(labels)
     
-    # Combine metrics
-    combined_metric = silhouette_scores_norm - (wcss_values / max(wcss_values))
-
-    return combined_metric.max()
-
+    # Initialize the minimum inter-cluster distance to a large number
+    min_inter_cluster_distance = np.inf
+    
+    # Calculate the minimum inter-cluster distance
+    for i in range(len(unique_clusters)):
+        for j in range(i + 1, len(unique_clusters)):
+            cluster_i = X[labels == unique_clusters[i]]
+            cluster_j = X[labels == unique_clusters[j]]
+            inter_cluster_distance = np.min(cdist(cluster_i, cluster_j))
+            if inter_cluster_distance < min_inter_cluster_distance:
+                min_inter_cluster_distance = inter_cluster_distance
+    
+    # Initialize the maximum intra-cluster distance to a small number
+    max_intra_cluster_distance = 0
+    
+    # Calculate the maximum intra-cluster distance
+    for cluster in unique_clusters:
+        cluster_points = X[labels == cluster]
+        intra_cluster_distance = np.max(pdist(cluster_points))
+        if intra_cluster_distance > max_intra_cluster_distance:
+            max_intra_cluster_distance = intra_cluster_distance
+    
+    # Calculate the Dunn Index
+    dunn_index_value = min_inter_cluster_distance / max_intra_cluster_distance
+    return dunn_index_value
 
 def preprocess_data(df):
     df = df.copy()
@@ -78,6 +76,44 @@ def preprocess_data(df):
     df = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)
     
     return df
+
+def calculate_accuracy(y_true, y_pred):
+    correct_predictions = 0
+    total_predictions = len(y_true)
+    
+    for true_label, pred_label in zip(y_true, y_pred):
+        if true_label == pred_label:
+            correct_predictions += 1
+    
+    accuracy = correct_predictions / total_predictions
+    return accuracy
+
+def calculate_f1_score(y_true, y_pred):
+    true_positives = 0
+    false_positives = 0
+    false_negatives = 0
+    
+    for true_label, pred_label in zip(y_true, y_pred):
+        if true_label == 1 and pred_label == 1:
+            true_positives += 1
+        elif true_label == 0 and pred_label == 1:
+            false_positives += 1
+        elif true_label == 1 and pred_label == 0:
+            false_negatives += 1
+
+    # print("True positives:", true_positives)
+    # print("False positives:", false_positives)
+    # print("False negatives:", false_negatives)
+    
+    precision = true_positives / (true_positives + false_positives)
+    recall = true_positives / (true_positives + false_negatives)
+    
+    if precision == 0 or recall == 0:
+        f1_score = 0
+    else:
+        f1_score = 2 * (precision * recall) / (precision + recall)
+    
+    return f1_score
 
 
 def read(uploaded_file):
@@ -241,91 +277,119 @@ elif selected == "Machine Learning":
             classification, clustering = st.tabs(["Classification algorithms", "Clustering algorithms"])
             
             with classification:
-                st.header("Classification Algorithms")
                 
-                target = st.selectbox("Select the target variable", st.session_state.processed_data.columns)
-                if st.button("Run Random Forest Classifier"):
-                    X = st.session_state.processed_data.drop(columns=[target])
-                    y = st.session_state.processed_data[target]
-                    
+                st.header("Classification Algorithms")
+                target_column = st.selectbox("Select target column for the Random Forest Classifier", st.session_state.file_pd.columns)
+                n_neighbors = st.slider("Select number of neighbors for the K-Nearest Neighbors Classifier", min_value=1, max_value=20, value=5)
+                # Random Forest Classifier
+                if st.button("Compare Random Forest Classifier and K-Nearest Neighbors Classifier"):
+                    # Split the data into features and target variable
+                    X = st.session_state.processed_data.drop(columns=target_column)
+                    y = st.session_state.processed_data[target_column]
+
+                    # Split the data into training and testing sets
                     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-                    classifier = RandomForestClassifier(n_estimators=100, random_state=42)
-                    classifier.fit(X_train, y_train)
-                    y_pred = classifier.predict(X_test)
-                    
-                    st.subheader("Classification Report")
-                    st.text(classification_report(y_test, y_pred, zero_division=0))
-                    
-                    st.subheader("Confusion Matrix")
-                    fig, ax = plt.subplots()
-                    sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt='d', cmap='Blues', ax=ax)
-                    st.pyplot(fig)
-                    
+
+                    # Initialize and train the Random Forest Classifier
+                    rf_classifier = RandomForestClassifier()
+                    rf_classifier.fit(X_train, y_train)
+
+                    # Initialize and train the KNN Classifier
+                    knn_classifier = KNeighborsClassifier(n_neighbors=n_neighbors)
+                    knn_classifier.fit(X_train, y_train)
+
+                    # Make predictions
+                    rf_y_pred = rf_classifier.predict(X_test)
+                    knn_y_pred = knn_classifier.predict(X_test)
+
+                    # Extract actual values
+                    actual_values = y_test.values
+
+                    # Print the actual values
+                    # print(actual_values)
+
+                    # Calculate accuracy and F1 score for Random Forest Classifier
+                    rf_accuracy = calculate_accuracy(actual_values, rf_y_pred)
+                    rf_f1 = calculate_f1_score(actual_values, rf_y_pred)
+
+                    # Calculate accuracy and F1 score for K-Nearest Neighbors Classifier
+                    knn_accuracy = calculate_accuracy(actual_values, knn_y_pred)
+                    knn_f1 = calculate_f1_score(actual_values, knn_y_pred)
+
+                    # Display the results
+                    st.subheader("Model Comparison")
+                    st.write("Random Forest Classifier:")
+                    st.write(f"Accuracy: {rf_accuracy:.3f}")
+                    st.write(f"F1 Score: {rf_f1:.3f}")
+                    st.write("K-Nearest Neighbors Classifier:")
+                    st.write(f"Accuracy: {knn_accuracy:.3f}")
+                    st.write(f"F1 Score: {knn_f1:.3f}")
+
             with clustering:
                 st.header("Clustering Algorithms")
 
-                num_clusters = st.slider("Select number of clusters", min_value=2, max_value=10, value=2)
-                
-                if st.button("Run K-Means Clustering"):
+                num_clusters = st.slider("Select number of clusters for both algorithms", min_value=2, max_value=10, value=2)
+
+                if st.button("Run clustering algorithms"):
                     X = st.session_state.processed_data
 
-                    max_silhouette = -2
-                    best_clusters = None
-                    best_centroids = None
+                    # K-Means Clustering
+                    kmeans = KMeans(n_clusters=num_clusters, random_state=0)
+                    kmeans.fit(X)
+                    kmeans_clusters = kmeans.labels_
+                    kmeans_silhouette = silhouette_score(X, kmeans_clusters)
+                    kmeans_dunn = dunn_index(X, kmeans_clusters)
+                    kmeans_davies_bouldin = davies_bouldin_score(X, kmeans_clusters)
+                    st.subheader("K-Means cluster algorithm :")
+                    st.write(f"")
+                    st.write(f"K-Means Silhouette score: {kmeans_silhouette:.3f}")
+                    st.write(f"")
+                    st.write(f"K-Means Dunn Index score: {kmeans_dunn:.3f}")
+                    st.write(f"")
+                    st.write(f"K-Means Davies-Bouldin Index score: {kmeans_davies_bouldin:.3f}")
+                    st.write(f"")
 
-                    for i in range(2):
-                        kmeans = KMeans(n_clusters=num_clusters, random_state=42+i*3)
-                        kmeans.fit(X)
-                        clusters = kmeans.labels_
-                        centroids = kmeans.cluster_centers_
+                    # Gaussian Mixture Models Clustering
+                    gmm = GaussianMixture(n_components=num_clusters).fit(X)
+                    gmm_clusters = gmm.predict(X)
+                    gmm_silhouette = silhouette_score(X, gmm_clusters)
+                    gmm_dunn = dunn_index(X, gmm_clusters)
+                    gmm_davies_bouldin = davies_bouldin_score(X, gmm_clusters)
+                    st.subheader("GMM cluster algorithm :")
+                    st.write(f"")
+                    st.write(f"GMM Silhouette score: {gmm_silhouette:.3f}")
+                    st.write(f"")
+                    st.write(f"GMM Dunn Index score: {gmm_dunn:.3f}")
+                    st.write(f"")
+                    st.write(f"GMM Davies-Bouldin Index score: {gmm_davies_bouldin:.3f}")
+                    st.write(f"")
 
-                        silhouette = silhouette_score(X, clusters)
-
-                        print (f"Iteration {i}")
-                        print (f"Silhouette score: {silhouette:.3f}")
-
-                        if silhouette > max_silhouette: 
-                            max_silhouette = silhouette
-                            best_clusters = clusters
-                            best_centroids = centroids
-
-                    clusters = best_clusters
-                    centroids = best_centroids
-                    silhouette = max_silhouette
-
-                    st.subheader("Cluster Centers")
-                    st.dataframe(pd.DataFrame(kmeans.cluster_centers_, columns=X.columns))
-
-
-                    silhouette_avg = silhouette_score(X, clusters)
-                    st.write(f"The silhouette score is: {silhouette_avg:.3f}")
-
+                    st.subheader("By comparing the algorithms :")
                     
-                    st.subheader("Cluster Visualization")
-                    pca = PCA(n_components=2)
-                    pca_data = pca.fit_transform(X)
-                    plt.figure(figsize=(10, 6))
-                    plt.scatter(pca_data[:, 0], pca_data[:, 1], c=clusters, cmap='viridis')
-                    plt.xlabel('PCA Component 1')
-                    plt.ylabel('PCA Component 2')
-                    plt.title('K-Means Clustering')
-                    st.pyplot(plt.gcf())
-                    
-                elif st.button("Run DBSCAN Clustering"):
-                    X = st.session_state.processed_data
+                    kmeans_points = 0
+                    gmm_points = 0
 
-                    dbscan = DBSCAN(eps=0.5, min_samples=5)
-                    clusters = dbscan.fit_predict(X)
+                    if kmeans_silhouette > gmm_silhouette:
+                        kmeans_points += 1
+                    elif kmeans_silhouette < gmm_silhouette:
+                        gmm_points += 1
 
-                    st.subheader("Cluster Visualization")
-                    pca = PCA(n_components=2)
-                    pca_data = pca.fit_transform(X)
-                    plt.figure(figsize=(10, 6))
-                    plt.scatter(pca_data[:, 0], pca_data[:, 1], c=clusters, cmap='viridis')
-                    plt.xlabel('PCA Component 1')
-                    plt.ylabel('PCA Component 2')
-                    plt.title('DBSCAN Clustering')
-                    st.pyplot(plt.gcf())
+                    if kmeans_dunn > gmm_dunn:
+                        kmeans_points += 1
+                    elif kmeans_dunn < gmm_dunn:
+                        gmm_points += 1
 
-                    
+                    if kmeans_davies_bouldin < gmm_davies_bouldin:
+                        kmeans_points += 1
+                    elif kmeans_davies_bouldin > gmm_davies_bouldin:
+                        gmm_points += 1
+
+                    if kmeans_points > gmm_points:
+                        st.write(f"We can see that K-Means algorithm is performing better in this dataset as it won in {kmeans_points} of the 3 categories")
+                    elif kmeans_points < gmm_points:
+                        st.write(f"We can see that GMM algorithm is performing better in this dataset as it won in {gmm_points} of the 3 categories")
+                    elif kmeans_points == gmm_points:
+                        st.write(f"The algorithms are performing equally in this dataset ")
+
+
 #-------------------------------------------------------------------------------------------------------------#
