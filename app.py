@@ -20,8 +20,8 @@ from sklearn.metrics import silhouette_score, davies_bouldin_score
 
 selected = option_menu(     
     menu_title=None,
-    options=["Home", "2D-Visualization", "Machine Learning"],
-    icons=["house", "graph-up", "robot"],
+    options=["Home", "2D-Visualization", "Machine Learning", "Info"],
+    icons=["house", "graph-up", "robot", "info"],
     orientation="horizontal",
 )
 
