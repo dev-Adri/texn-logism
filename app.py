@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns   
 import numpy as np
 
-from sklearn.metrics import accuracy_score, f1_score, silhouette_score, davies_bouldin_score
+from sklearn.metrics import accuracy_score, calinski_harabasz_score, f1_score, precision_score, silhouette_score, davies_bouldin_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from scipy.spatial.distance import cdist, pdist
@@ -14,7 +14,7 @@ from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 from sklearn.impute import SimpleImputer
 from streamlit_option_menu import option_menu
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 
 selected = option_menu(     
@@ -192,6 +192,10 @@ elif selected == "2D-Visualization":
                     placeholder.empty()
 
 elif selected == "Machine Learning":
+
+    if "file_pd" not in st.session_state:
+        st.session_state.file_pd = None
+
     if st.session_state.file_pd is None:
         st.title("You haven't uploaded any data yet.")
         st.text("Please go back to the home page and upload a CSV or Excel file.")
@@ -212,87 +216,94 @@ elif selected == "Machine Learning":
                     X = data.drop(columns=target_column)
                     y = data[target_column]
                     
-                    # Logging shape and unique values in target column for debugging
-                    st.write(f"Shape of X: {X.shape}")
-                    st.write(f"Shape of y: {y.shape}")
-                    st.write(f"Unique values in target column: {y.unique()}")
-                    
                     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
                     
                     rfc = RandomForestClassifier(random_state=42)
                     rfc.fit(X_train, y_train)
                     rfc_pred = rfc.predict(X_test)
-                    rfc_acc = calculate_accuracy(y_test, rfc_pred)
-                    rfc_f1 = calculate_f1_score(y_test, rfc_pred)
+                    rfc_acc = accuracy_score(y_test, rfc_pred)
+                    rfc_f1 = f1_score(y_test, rfc_pred, average='weighted')
+                    rfc_prec = precision_score(y_test, rfc_pred, average='weighted', zero_division=0)
                     
                     knn = KNeighborsClassifier(n_neighbors=n_neighbors)
                     knn.fit(X_train, y_train)
                     knn_pred = knn.predict(X_test)
-                    knn_acc = calculate_accuracy(y_test, knn_pred)
-                    knn_f1 = calculate_f1_score(y_test, knn_pred)
+                    knn_acc = accuracy_score(y_test, knn_pred)
+                    knn_f1 = f1_score(y_test, knn_pred, average='weighted')
+                    knn_prec = precision_score(y_test, knn_pred, average='weighted', zero_division=0)
+                    
+                    rfc_scores = {'accuracy': rfc_acc, 'f1': rfc_f1, 'precision': rfc_prec}
+                    knn_scores = {'accuracy': knn_acc, 'f1': knn_f1, 'precision': knn_prec}
+                    
+                    rfc_wins = sum([rfc_scores[metric] > knn_scores[metric] for metric in rfc_scores])
+                    knn_wins = sum([knn_scores[metric] > rfc_scores[metric] for metric in knn_scores])
+                    
+                    if rfc_wins > knn_wins:
+                        st.success(f"The Random Forest Classifier performed better as it won {rfc_wins} out of 3 categories.")
+                    elif knn_wins > rfc_wins:
+                        st.success(f"The K-Nearest Neighbors Classifier performed better as it won {knn_wins} out of 3 categories.")
+                    else:
+                        st.info("Both classifiers performed equally well.")
                     
                     st.write("### Random Forest Classifier Results")
                     st.write(f"Accuracy: {rfc_acc}")
                     st.write(f"F1 Score: {rfc_f1}")
+                    st.write(f"Precision: {rfc_prec}")
                     
                     st.write("### K-Nearest Neighbors Classifier Results")
                     st.write(f"Accuracy: {knn_acc}")
                     st.write(f"F1 Score: {knn_f1}")
-                    
-                    if rfc_acc > knn_acc:
-                        st.success("Random Forest Classifier performed better in terms of accuracy.")
-                    elif rfc_acc < knn_acc:
-                        st.success("K-Nearest Neighbors Classifier performed better in terms of accuracy.")
-                    else:
-                        st.info("Both classifiers performed equally well in terms of accuracy.")
-                        
+                    st.write(f"Precision: {knn_prec}")
+            
             with clustering:
                 st.header("Clustering Algorithms")
-                n_clusters = st.slider("Select number of clusters", min_value=2, max_value=10, value=3)
+                n_clusters = st.slider("Select number of clusters for the Clustering Algorithms", min_value=2, max_value=10, value=3)
                 
                 if st.button("Compare K-Means and Gaussian Mixture Model"):
-                    X = st.session_state.processed_data
+                    data = st.session_state.processed_data
                     
-                    # Feature scaling
-                    scaler = StandardScaler()
-                    X_scaled = scaler.fit_transform(X)
-
-                    # K-Means
                     kmeans = KMeans(n_clusters=n_clusters, random_state=42)
-                    kmeans_labels = kmeans.fit_predict(X_scaled)
-                    kmeans_silhouette = silhouette_score(X_scaled, kmeans_labels)
-                    kmeans_db = davies_bouldin_score(X_scaled, kmeans_labels)
+                    kmeans.fit(data)
+                    kmeans_labels = kmeans.predict(data)
+                    kmeans_silhouette = silhouette_score(data, kmeans_labels)
+                    kmeans_davies_bouldin = davies_bouldin_score(data, kmeans_labels)
+                    kmeans_calinski_harabasz = calinski_harabasz_score(data, kmeans_labels)
                     
-                    # Gaussian Mixture Model
                     gmm = GaussianMixture(n_components=n_clusters, random_state=42)
-                    gmm_labels = gmm.fit_predict(X_scaled)
-                    gmm_silhouette = silhouette_score(X_scaled, gmm_labels)
-                    gmm_db = davies_bouldin_score(X_scaled, gmm_labels)
-
-                    # Visualize clustering results
-                    plt.figure(figsize=(10, 6))
-                    plt.subplot(1, 2, 1)
-                    sns.scatterplot(x=X.iloc[:, 0], y=X.iloc[:, 1], hue=kmeans_labels, palette="Set1", legend="full")
-                    plt.title('K-Means Clustering')
-                    plt.xlabel('Feature 1')
-                    plt.ylabel('Feature 2')
+                    gmm.fit(data)
+                    gmm_labels = gmm.predict(data)
+                    gmm_silhouette = silhouette_score(data, gmm_labels)
+                    gmm_davies_bouldin = davies_bouldin_score(data, gmm_labels)
+                    gmm_calinski_harabasz = calinski_harabasz_score(data, gmm_labels)
                     
-                    plt.subplot(1, 2, 2)
-                    sns.scatterplot(x=X.iloc[:, 0], y=X.iloc[:, 1], hue=gmm_labels, palette="Set1", legend="full")
-                    plt.title('Gaussian Mixture Model Clustering')
-                    plt.xlabel('Feature 1')
-                    plt.ylabel('Feature 2')
+                    kmeans_scores = {'silhouette': kmeans_silhouette, 'davies_bouldin': kmeans_davies_bouldin, 'calinski_harabasz': kmeans_calinski_harabasz}
+                    gmm_scores = {'silhouette': gmm_silhouette, 'davies_bouldin': gmm_davies_bouldin, 'calinski_harabasz': gmm_calinski_harabasz}
                     
-                    st.pyplot(plt.gcf())
+                    # Note: silhouette and calinski_harabasz scores are better when higher, davies_bouldin score is better when lower
+                    kmeans_wins = sum([kmeans_scores['silhouette'] > gmm_scores['silhouette'],
+                                    kmeans_scores['davies_bouldin'] < gmm_scores['davies_bouldin'],
+                                    kmeans_scores['calinski_harabasz'] > gmm_scores['calinski_harabasz']])
+                    gmm_wins = sum([gmm_scores['silhouette'] > kmeans_scores['silhouette'],
+                                    gmm_scores['davies_bouldin'] < kmeans_scores['davies_bouldin'],
+                                    gmm_scores['calinski_harabasz'] > kmeans_scores['calinski_harabasz']])
+                    
+                    if kmeans_wins > gmm_wins:
+                        st.success(f"The K-Means algorithm performed better as it won {kmeans_wins} out of 3 categories.")
+                    elif gmm_wins > kmeans_wins:
+                        st.success(f"The Gaussian Mixture Model performed better as it won {gmm_wins} out of 3 categories.")
+                    else:
+                        st.info("Both algorithms performed equally well.")
                     
                     st.write("### K-Means Clustering Results")
                     st.write(f"Silhouette Score: {kmeans_silhouette}")
-                    st.write(f"Davies-Bouldin Score: {kmeans_db}")
+                    st.write(f"Davies-Bouldin Score: {kmeans_davies_bouldin}")
+                    st.write(f"Calinski-Harabasz Score: {kmeans_calinski_harabasz}")
                     
                     st.write("### Gaussian Mixture Model Results")
                     st.write(f"Silhouette Score: {gmm_silhouette}")
-                    st.write(f"Davies-Bouldin Score: {gmm_db}")   
-                
+                    st.write(f"Davies-Bouldin Score: {gmm_davies_bouldin}")
+                    st.write(f"Calinski-Harabasz Score: {gmm_calinski_harabasz}")
+
 elif selected == "Info":
     st.title("Tool Info")
     st.write("This tool allows you to:")
@@ -303,5 +314,5 @@ elif selected == "Info":
     st.write("- Compare classification algorithms (Random Forest and K-Nearest Neighbors).")
     st.write("- Compare clustering algorithms (K-Means and Gaussian Mixture Model).")
     st.write("- Evaluate the performance of classification and clustering algorithms using various metrics.")
-    st.write("Developed by [Your Name].")
-    st.write("For more information, contact [Your Contact Information].")
+    st.write("Developed by Adrilon Islami and Georgi Hristov.")
+    st.write("For more information, contact inf2021065@ionio.gr or inf2021248@ionio.gr.")
