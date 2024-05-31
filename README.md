@@ -1,5 +1,6 @@
 # Texnologia Logismikou
 To run this app use:
+
 ``
 docker build -t "texnlogism" .
 ``
