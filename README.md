@@ -8,7 +8,7 @@ docker build -t "texnlogism" .
 To build the container.
 
 ``
-docker run -p 8105:8105 "texnlogism"
+docker run -p 8501:8501 "texnlogism"
 ``
 
 To run the application.
