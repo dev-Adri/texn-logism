@@ -1,2 +1,0 @@
-docker build -t "<name>" .
-docker run -p 8501:8501 "<name>"
