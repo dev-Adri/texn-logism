@@ -1,0 +1,500 @@
+date,home_team,away_team,team,scorer,minute,own_goal,penalty
+1916-07-02,Chile,Uruguay,Uruguay,José Piendibene,44,FALSE,FALSE
+1916-07-02,Chile,Uruguay,Uruguay,Isabelino Gradín,55,FALSE,FALSE
+1916-07-02,Chile,Uruguay,Uruguay,Isabelino Gradín,70,FALSE,FALSE
+1916-07-02,Chile,Uruguay,Uruguay,José Piendibene,75,FALSE,FALSE
+1916-07-06,Argentina,Chile,Argentina,Alberto Ohaco,2,FALSE,FALSE
+1916-07-06,Argentina,Chile,Chile,Telésforo Báez,44,FALSE,FALSE
+1916-07-06,Argentina,Chile,Argentina,Juan Domingo Brown,60,FALSE,TRUE
+1916-07-06,Argentina,Chile,Argentina,Juan Domingo Brown,62,FALSE,TRUE
+1916-07-06,Argentina,Chile,Argentina,Alberto Marcovecchio,67,FALSE,FALSE
+1916-07-06,Argentina,Chile,Argentina,Alberto Ohaco,75,FALSE,FALSE
+1916-07-06,Argentina,Chile,Argentina,Alberto Marcovecchio,81,FALSE,FALSE
+1916-07-08,Brazil,Chile,Brazil,Demóstenes Correia de Syllos,29,FALSE,FALSE
+1916-07-08,Brazil,Chile,Chile,Hernando Salazar,85,FALSE,FALSE
+1916-07-10,Argentina,Brazil,Argentina,José Durand Laguna,10,FALSE,FALSE
+1916-07-10,Argentina,Brazil,Brazil,Manoel Alencar Monte,23,FALSE,FALSE
+1916-07-12,Brazil,Uruguay,Brazil,Arthur Friedenreich,8,FALSE,FALSE
+1916-07-12,Brazil,Uruguay,Uruguay,Isabelino Gradín,58,FALSE,FALSE
+1916-07-12,Brazil,Uruguay,Uruguay,Jose Tognola,77,FALSE,FALSE
+1917-09-30,Uruguay,Chile,Uruguay,Carlos Scarone,20,FALSE,FALSE
+1917-09-30,Uruguay,Chile,Uruguay,Ángel Romano,44,FALSE,FALSE
+1917-09-30,Uruguay,Chile,Uruguay,Carlos Scarone,62,FALSE,TRUE
+1917-09-30,Uruguay,Chile,Uruguay,Ángel Romano,75,FALSE,FALSE
+1917-10-03,Argentina,Brazil,Brazil,Neco,8,FALSE,FALSE
+1917-10-03,Argentina,Brazil,Argentina,Pedro Calomino,15,FALSE,FALSE
+1917-10-03,Argentina,Brazil,Brazil,Silvio Lagreca,39,FALSE,TRUE
+1917-10-03,Argentina,Brazil,Argentina,Alberto Ohaco,56,FALSE,TRUE
+1917-10-03,Argentina,Brazil,Argentina,Alberto Ohaco,58,FALSE,TRUE
+1917-10-03,Argentina,Brazil,Argentina,Antonio Blanco,80,FALSE,FALSE
+1917-10-06,Argentina,Chile,Argentina,Luis García,76,TRUE,FALSE
+1917-10-07,Uruguay,Brazil,Uruguay,Héctor Scarone,8,FALSE,FALSE
+1917-10-07,Uruguay,Brazil,Uruguay,Ángel Romano,17,FALSE,FALSE
+1917-10-07,Uruguay,Brazil,Uruguay,Ángel Romano,77,FALSE,FALSE
+1917-10-07,Uruguay,Brazil,Uruguay,Carlos Scarone,86,FALSE,FALSE
+1917-10-12,Brazil,Chile,Brazil,Caetano Izzo,21,FALSE,FALSE
+1917-10-12,Brazil,Chile,Brazil,Neco,23,FALSE,FALSE
+1917-10-12,Brazil,Chile,Brazil,Haroldo Domingues,26,FALSE,FALSE
+1917-10-12,Brazil,Chile,Brazil,Amílcar Barbuy,41,FALSE,FALSE
+1917-10-12,Brazil,Chile,Brazil,Haroldo Domingues,59,FALSE,FALSE
+1917-10-14,Uruguay,Argentina,Uruguay,Héctor Scarone,62,FALSE,FALSE
+1919-05-11,Brazil,Chile,Brazil,Arthur Friedenreich,19,FALSE,FALSE
+1919-05-11,Brazil,Chile,Brazil,Neco,21,FALSE,FALSE
+1919-05-11,Brazil,Chile,Brazil,Arthur Friedenreich,38,FALSE,FALSE
+1919-05-11,Brazil,Chile,Brazil,Arthur Friedenreich,76,FALSE,FALSE
+1919-05-11,Brazil,Chile,Brazil,Haroldo Domingues,79,FALSE,FALSE
+1919-05-11,Brazil,Chile,Brazil,Neco,83,FALSE,FALSE
+1919-05-13,Argentina,Uruguay,Uruguay,Carlos Scarone,19,FALSE,FALSE
+1919-05-13,Argentina,Uruguay,Uruguay,Héctor Scarone,23,FALSE,FALSE
+1919-05-13,Argentina,Uruguay,Argentina,Carlos Izaguirre,34,FALSE,FALSE
+1919-05-13,Argentina,Uruguay,Argentina,Manuel Varela,79,TRUE,FALSE
+1919-05-13,Argentina,Uruguay,Uruguay,Isabelino Gradín,85,FALSE,FALSE
+1919-05-17,Chile,Uruguay,Uruguay,Carlos Scarone,31,FALSE,FALSE
+1919-05-17,Chile,Uruguay,Uruguay,José Pérez,43,FALSE,FALSE
+1919-05-18,Brazil,Argentina,Brazil,Heitor,22,FALSE,FALSE
+1919-05-18,Brazil,Argentina,Brazil,Amílcar Barbuy,57,FALSE,FALSE
+1919-05-18,Brazil,Argentina,Argentina,Carlos Izaguirre,65,FALSE,FALSE
+1919-05-18,Brazil,Argentina,Brazil,Adolpho Millón Junior,77,FALSE,FALSE
+1919-05-22,Argentina,Chile,Argentina,Edwin Clarcke,10,FALSE,FALSE
+1919-05-22,Argentina,Chile,Argentina,Carlos Izaguirre,13,FALSE,FALSE
+1919-05-22,Argentina,Chile,Argentina,Edwin Clarcke,23,FALSE,FALSE
+1919-05-22,Argentina,Chile,Chile,Alfredo France,33,FALSE,FALSE
+1919-05-22,Argentina,Chile,Argentina,Edwin Clarcke,62,FALSE,FALSE
+1919-05-26,Brazil,Uruguay,Uruguay,Isabelino Gradín,13,FALSE,FALSE
+1919-05-26,Brazil,Uruguay,Uruguay,Carlos Scarone,17,FALSE,FALSE
+1919-05-26,Brazil,Uruguay,Brazil,Neco,29,FALSE,FALSE
+1919-05-26,Brazil,Uruguay,Brazil,Neco,63,FALSE,FALSE
+1919-05-29,Brazil,Uruguay,Brazil,Arthur Friedenreich,122,FALSE,FALSE
+1920-09-11,Chile,Brazil,Brazil,Ismael Alvariza,53,FALSE,FALSE
+1920-09-12,Uruguay,Argentina,Uruguay,José Piendibene,10,FALSE,FALSE
+1920-09-12,Uruguay,Argentina,Argentina,Raúl Echeverría,75,FALSE,FALSE
+1920-09-18,Brazil,Uruguay,Uruguay,Ángel Romano,23,FALSE,FALSE
+1920-09-18,Brazil,Uruguay,Uruguay,Antonio Urdinarán,26,FALSE,TRUE
+1920-09-18,Brazil,Uruguay,Uruguay,José Pérez,29,FALSE,FALSE
+1920-09-18,Brazil,Uruguay,Uruguay,Antonio Campolo,48,FALSE,FALSE
+1920-09-18,Brazil,Uruguay,Uruguay,Ángel Romano,60,FALSE,FALSE
+1920-09-18,Brazil,Uruguay,Uruguay,José Pérez,65,FALSE,FALSE
+1920-09-20,Chile,Argentina,Argentina,Miguel Dellavalle,13,FALSE,FALSE
+1920-09-20,Chile,Argentina,Chile,Hernando Bolados,30,FALSE,FALSE
+1920-09-25,Argentina,Brazil,Argentina,Raúl Echeverría,40,FALSE,FALSE
+1920-09-25,Argentina,Brazil,Argentina,Julio Libonatti,73,FALSE,FALSE
+1920-10-03,Chile,Uruguay,Uruguay,Ángel Romano,37,FALSE,FALSE
+1920-10-03,Chile,Uruguay,Chile,Aurelio Domínguez,60,FALSE,FALSE
+1920-10-03,Chile,Uruguay,Uruguay,José Pérez,65,FALSE,FALSE
+1921-10-02,Argentina,Brazil,Argentina,Julio Libonatti,27,FALSE,FALSE
+1921-10-09,Paraguay,Uruguay,Paraguay,Gerardo Rivas,9,FALSE,FALSE
+1921-10-09,Paraguay,Uruguay,Paraguay,Ildefonso López,66,FALSE,FALSE
+1921-10-09,Paraguay,Uruguay,Uruguay,José Piendibene,83,FALSE,FALSE
+1921-10-12,Brazil,Paraguay,Brazil,Ernesto Duarte Machado da Silva,21,FALSE,FALSE
+1921-10-12,Brazil,Paraguay,Brazil,Ernesto Duarte Machado da Silva,44,FALSE,FALSE
+1921-10-12,Brazil,Paraguay,Brazil,Aníbal Médicis Candiota,46,FALSE,FALSE
+1921-10-16,Argentina,Paraguay,Argentina,Julio Libonatti,1,FALSE,FALSE
+1921-10-16,Argentina,Paraguay,Argentina,Blas Saruppo,71,FALSE,FALSE
+1921-10-16,Argentina,Paraguay,Argentina,Raúl Echeverría,76,FALSE,FALSE
+1921-10-23,Brazil,Uruguay,Uruguay,Ángel Romano,1,FALSE,FALSE
+1921-10-23,Brazil,Uruguay,Uruguay,Ángel Romano,8,FALSE,FALSE
+1921-10-23,Brazil,Uruguay,Brazil,José Carlos Guimarães,53,FALSE,FALSE
+1921-10-30,Argentina,Uruguay,Argentina,Julio Libonatti,57,FALSE,FALSE
+1922-09-17,Brazil,Chile,Brazil,Altino Marcondes,9,FALSE,FALSE
+1922-09-17,Brazil,Chile,Chile,Manuel Bravo Paredes,41,FALSE,FALSE
+1922-09-23,Chile,Uruguay,Uruguay,Juan Carlos Heguy,10,FALSE,FALSE
+1922-09-23,Chile,Uruguay,Uruguay,Antonio Urdinarán,19,FALSE,TRUE
+1922-09-24,Brazil,Paraguay,Brazil,Amílcar Barbuy,14,FALSE,FALSE
+1922-09-24,Brazil,Paraguay,Paraguay,Gerardo Rivas,71,FALSE,FALSE
+1922-09-28,Argentina,Chile,Argentina,Angel Chiessa,10,FALSE,FALSE
+1922-09-28,Argentina,Chile,Argentina,Julio Francia,36,FALSE,FALSE
+1922-09-28,Argentina,Chile,Argentina,Julio Francia,41,FALSE,FALSE
+1922-09-28,Argentina,Chile,Argentina,José Gaslini,75,FALSE,FALSE
+1922-10-05,Chile,Paraguay,Paraguay,Julio Ramírez,5,FALSE,FALSE
+1922-10-05,Chile,Paraguay,Paraguay,Ildefonso López,78,FALSE,FALSE
+1922-10-05,Chile,Paraguay,Paraguay,Luis Fretes,86,FALSE,FALSE
+1922-10-08,Argentina,Uruguay,Uruguay,Felipe Buffoni,43,FALSE,FALSE
+1922-10-12,Paraguay,Uruguay,Paraguay,Carlos Elizeche,7,FALSE,FALSE
+1922-10-15,Brazil,Argentina,Brazil,Neco,42,FALSE,FALSE
+1922-10-15,Brazil,Argentina,Brazil,Amílcar Barbuy,86,FALSE,TRUE
+1922-10-18,Argentina,Paraguay,Argentina,Julio Francia,63,FALSE,FALSE
+1922-10-18,Argentina,Paraguay,Argentina,Julio Francia,79,FALSE,TRUE
+1922-10-22,Brazil,Paraguay,Brazil,Neco,11,FALSE,FALSE
+1922-10-22,Brazil,Paraguay,Brazil,Xavier Camargo,48,FALSE,FALSE
+1922-10-22,Brazil,Paraguay,Brazil,Xavier Camargo,89,FALSE,FALSE
+1923-10-29,Argentina,Paraguay,Paraguay,Gerardo Rivas,10,FALSE,FALSE
+1923-10-29,Argentina,Paraguay,Argentina,Blas Saruppo,18,FALSE,FALSE
+1923-10-29,Argentina,Paraguay,Paraguay,Agustín Zelada,49,FALSE,FALSE
+1923-10-29,Argentina,Paraguay,Argentina,Vicente Aguirre,58,FALSE,FALSE
+1923-10-29,Argentina,Paraguay,Paraguay,Luis Fretes,65,FALSE,FALSE
+1923-10-29,Argentina,Paraguay,Argentina,Vicente Aguirre,77,FALSE,FALSE
+1923-10-29,Argentina,Paraguay,Argentina,Vicente Aguirre,86,FALSE,FALSE
+1923-11-04,Uruguay,Paraguay,Uruguay,Héctor Scarone,11,FALSE,FALSE
+1923-11-04,Uruguay,Paraguay,Uruguay,Pedro Petrone,87,FALSE,FALSE
+1923-11-11,Brazil,Paraguay,Paraguay,Ildefonso López,56,FALSE,FALSE
+1923-11-18,Argentina,Brazil,Argentina,Cesáreo Onzari,11,FALSE,FALSE
+1923-11-18,Argentina,Brazil,Brazil,Nilo Braga,15,FALSE,FALSE
+1923-11-18,Argentina,Brazil,Argentina,Blas Saruppo,76,FALSE,FALSE
+1923-11-25,Uruguay,Brazil,Uruguay,Pedro Petrone,56,FALSE,FALSE
+1923-11-25,Uruguay,Brazil,Brazil,Nilo Braga,59,FALSE,FALSE
+1923-11-25,Uruguay,Brazil,Uruguay,José Cea,75,FALSE,FALSE
+1923-12-02,Uruguay,Argentina,Uruguay,Pedro Petrone,28,FALSE,FALSE
+1923-12-02,Uruguay,Argentina,Uruguay,Pascual Somma,88,FALSE,FALSE
+1924-05-25,Czechoslovakia,Turkey,Czechoslovakia,Rudolf Sloup,21,FALSE,FALSE
+1924-05-25,Czechoslovakia,Turkey,Czechoslovakia,Josef Sedláček,28,FALSE,FALSE
+1924-05-25,Czechoslovakia,Turkey,Czechoslovakia,Josef Sedláček,37,FALSE,FALSE
+1924-05-25,Czechoslovakia,Turkey,Turkey,Bekir Refet,63,FALSE,FALSE
+1924-05-25,Czechoslovakia,Turkey,Czechoslovakia,Jan Novák,64,FALSE,FALSE
+1924-05-25,Czechoslovakia,Turkey,Czechoslovakia,Josef Čapek,74,FALSE,FALSE
+1924-05-25,Czechoslovakia,Turkey,Turkey,Bekir Refet,82,FALSE,FALSE
+1924-05-25,Italy,Spain,Italy,Pedro Vallana,84,TRUE,FALSE
+1924-05-25,Switzerland,Lithuania,Switzerland,Paul Sturzenegger,2,FALSE,FALSE
+1924-05-25,Switzerland,Lithuania,Switzerland,Walter Dietrich,14,FALSE,FALSE
+1924-05-25,Switzerland,Lithuania,Switzerland,Max Abegglen,41,FALSE,FALSE
+1924-05-25,Switzerland,Lithuania,Switzerland,Paul Sturzenegger,43,FALSE,FALSE
+1924-05-25,Switzerland,Lithuania,Switzerland,Max Abegglen,50,FALSE,FALSE
+1924-05-25,Switzerland,Lithuania,Switzerland,Max Abegglen,58,FALSE,FALSE
+1924-05-25,Switzerland,Lithuania,Switzerland,Rudolf Ramseyer,63,FALSE,TRUE
+1924-05-25,Switzerland,Lithuania,Switzerland,Paul Sturzenegger,68,FALSE,FALSE
+1924-05-25,Switzerland,Lithuania,Switzerland,Paul Sturzenegger,85,FALSE,FALSE
+1924-05-25,United States,Estonia,United States,Andy Straden,15,FALSE,TRUE
+1924-05-26,Hungary,Poland,Hungary,József Eisenhoffer,14,FALSE,FALSE
+1924-05-26,Hungary,Poland,Hungary,Ferenc Hirzer,51,FALSE,FALSE
+1924-05-26,Hungary,Poland,Hungary,Ferenc Hirzer,58,FALSE,FALSE
+1924-05-26,Hungary,Poland,Hungary,Zoltán Opata,70,FALSE,FALSE
+1924-05-26,Hungary,Poland,Hungary,Zoltán Opata,87,FALSE,FALSE
+1924-05-26,Uruguay,Yugoslavia,Uruguay,José Vidal,20,FALSE,FALSE
+1924-05-26,Uruguay,Yugoslavia,Uruguay,Héctor Scarone,23,FALSE,FALSE
+1924-05-26,Uruguay,Yugoslavia,Uruguay,Pedro Petrone,35,FALSE,FALSE
+1924-05-26,Uruguay,Yugoslavia,Uruguay,Pedro Cea,50,FALSE,FALSE
+1924-05-26,Uruguay,Yugoslavia,Uruguay,Ángel Romano,58,FALSE,FALSE
+1924-05-26,Uruguay,Yugoslavia,Uruguay,Pedro Petrone,61,FALSE,FALSE
+1924-05-26,Uruguay,Yugoslavia,Uruguay,Pedro Cea,80,FALSE,FALSE
+1924-05-27,France,Latvia,France,Édouard Crut,17,FALSE,FALSE
+1924-05-27,France,Latvia,France,Paul Nicolas,25,FALSE,FALSE
+1924-05-27,France,Latvia,France,Édouard Crut,28,FALSE,FALSE
+1924-05-27,France,Latvia,France,Paul Nicolas,50,FALSE,FALSE
+1924-05-27,France,Latvia,France,Édouard Crut,55,FALSE,FALSE
+1924-05-27,France,Latvia,France,Jean Boyer,71,FALSE,FALSE
+1924-05-27,France,Latvia,France,Jean Boyer,87,FALSE,FALSE
+1924-05-27,Netherlands,Romania,Netherlands,Albert Hurgronje,8,FALSE,FALSE
+1924-05-27,Netherlands,Romania,Netherlands,Kees Pijl,32,FALSE,FALSE
+1924-05-27,Netherlands,Romania,Netherlands,Kees Pijl,52,FALSE,FALSE
+1924-05-27,Netherlands,Romania,Netherlands,Kees Pijl,66,FALSE,FALSE
+1924-05-27,Netherlands,Romania,Netherlands,Kees Pijl,68,FALSE,FALSE
+1924-05-27,Netherlands,Romania,Netherlands,Johannes de Natris,69,FALSE,TRUE
+1924-05-28,Republic of Ireland,Bulgaria,Republic of Ireland,Paddy Duncan,75,FALSE,FALSE
+1924-05-28,Switzerland,Czechoslovakia,Czechoslovakia,Rudolf Sloup,21,FALSE,TRUE
+1924-05-28,Switzerland,Czechoslovakia,Switzerland,Walter Dietrich,79,FALSE,FALSE
+1924-05-29,Egypt,Hungary,Egypt,Ibrahim Yakan,4,FALSE,FALSE
+1924-05-29,Egypt,Hungary,Egypt,Hussein Hegazi,40,FALSE,FALSE
+1924-05-29,Egypt,Hungary,Egypt,Ibrahim Yakan,58,FALSE,FALSE
+1924-05-29,Italy,Luxembourg,Italy,Adolfo Baloncieri,20,FALSE,FALSE
+1924-05-29,Italy,Luxembourg,Italy,Giuseppe Della Valle,38,FALSE,FALSE
+1924-05-29,Sweden,Belgium,Sweden,Rudolf Kock,8,FALSE,FALSE
+1924-05-29,Sweden,Belgium,Sweden,Sven Rydell,20,FALSE,FALSE
+1924-05-29,Sweden,Belgium,Sweden,Rudolf Kock,24,FALSE,FALSE
+1924-05-29,Sweden,Belgium,Sweden,Charles Brommesson,30,FALSE,FALSE
+1924-05-29,Sweden,Belgium,Sweden,Tore Keller,46,FALSE,FALSE
+1924-05-29,Sweden,Belgium,Sweden,Sven Rydell,61,FALSE,FALSE
+1924-05-29,Sweden,Belgium,Belgium,Henri Larnoe,67,FALSE,FALSE
+1924-05-29,Sweden,Belgium,Sweden,Rudolf Kock,77,FALSE,FALSE
+1924-05-29,Sweden,Belgium,Sweden,Sven Rydell,83,FALSE,FALSE
+1924-05-29,Uruguay,United States,Uruguay,Pedro Petrone,10,FALSE,FALSE
+1924-05-29,Uruguay,United States,Uruguay,Héctor Scarone,15,FALSE,FALSE
+1924-05-29,Uruguay,United States,Uruguay,Pedro Petrone,44,FALSE,FALSE
+1924-05-30,Switzerland,Czechoslovakia,Switzerland,Robert Pache,87,FALSE,FALSE
+1924-06-01,France,Uruguay,Uruguay,Héctor Scarone,2,FALSE,FALSE
+1924-06-01,France,Uruguay,France,Paul Nicolas,12,FALSE,FALSE
+1924-06-01,France,Uruguay,Uruguay,Héctor Scarone,24,FALSE,FALSE
+1924-06-01,France,Uruguay,Uruguay,Pedro Petrone,58,FALSE,FALSE
+1924-06-01,France,Uruguay,Uruguay,Pedro Petrone,68,FALSE,FALSE
+1924-06-01,France,Uruguay,Uruguay,Ángel Romano,83,FALSE,FALSE
+1924-06-01,Sweden,Egypt,Sweden,Per Kaufeldt,5,FALSE,FALSE
+1924-06-01,Sweden,Egypt,Sweden,Charles Brommesson,31,FALSE,FALSE
+1924-06-01,Sweden,Egypt,Sweden,Charles Brommesson,34,FALSE,FALSE
+1924-06-01,Sweden,Egypt,Sweden,Sven Rydell,49,FALSE,FALSE
+1924-06-01,Sweden,Egypt,Sweden,Per Kaufeldt,71,FALSE,FALSE
+1924-06-02,Netherlands,Republic of Ireland,Netherlands,Ok Formenoy,7,FALSE,FALSE
+1924-06-02,Netherlands,Republic of Ireland,Republic of Ireland,Frank Ghent,33,FALSE,FALSE
+1924-06-02,Netherlands,Republic of Ireland,Netherlands,Ok Formenoy,104,FALSE,FALSE
+1924-06-02,Switzerland,Italy,Switzerland,Paul Sturzenegger,47,FALSE,FALSE
+1924-06-02,Switzerland,Italy,Italy,Giuseppe Della Valle,52,FALSE,FALSE
+1924-06-02,Switzerland,Italy,Switzerland,Max Abegglen,60,FALSE,FALSE
+1924-06-05,Switzerland,Sweden,Switzerland,Max Abegglen,15,FALSE,FALSE
+1924-06-05,Switzerland,Sweden,Sweden,Rudolf Kock,41,FALSE,FALSE
+1924-06-05,Switzerland,Sweden,Switzerland,Max Abegglen,77,FALSE,FALSE
+1924-06-06,Uruguay,Netherlands,Netherlands,Cornelis Pijl,32,FALSE,FALSE
+1924-06-06,Uruguay,Netherlands,Uruguay,Pedro Cea,62,FALSE,FALSE
+1924-06-06,Uruguay,Netherlands,Uruguay,Héctor Scarone,81,FALSE,TRUE
+1924-06-08,Sweden,Netherlands,Sweden,Per Kaufeldt,44,FALSE,FALSE
+1924-06-08,Sweden,Netherlands,Netherlands,André le Fèvre,77,FALSE,FALSE
+1924-06-09,Sweden,Netherlands,Sweden,Sven Rydell,34,FALSE,FALSE
+1924-06-09,Sweden,Netherlands,Sweden,Evert Lundqvist,42,FALSE,FALSE
+1924-06-09,Sweden,Netherlands,Netherlands,Ok Formenoy,43,FALSE,TRUE
+1924-06-09,Sweden,Netherlands,Sweden,Sven Rydell,77,FALSE,FALSE
+1924-06-09,Uruguay,Switzerland,Uruguay,Pedro Petrone,9,FALSE,FALSE
+1924-06-09,Uruguay,Switzerland,Uruguay,Pedro Cea,65,FALSE,FALSE
+1924-06-09,Uruguay,Switzerland,Uruguay,Ángel Romano,82,FALSE,FALSE
+1924-10-19,Uruguay,Chile,Uruguay,Pedro Petrone,40,FALSE,FALSE
+1924-10-19,Uruguay,Chile,Uruguay,Pedro Petrone,53,FALSE,FALSE
+1924-10-19,Uruguay,Chile,Uruguay,Pedro Zingone,73,FALSE,FALSE
+1924-10-19,Uruguay,Chile,Uruguay,Ángel Romano,78,FALSE,FALSE
+1924-10-19,Uruguay,Chile,Uruguay,Pedro Petrone,88,FALSE,FALSE
+1924-10-25,Argentina,Chile,Argentina,Gabino Sosa,5,FALSE,FALSE
+1924-10-25,Argentina,Chile,Argentina,Juan Loyarte,78,FALSE,FALSE
+1924-10-26,Uruguay,Paraguay,Uruguay,Pedro Petrone,28,FALSE,FALSE
+1924-10-26,Uruguay,Paraguay,Uruguay,Ángel Romano,37,FALSE,FALSE
+1924-10-26,Uruguay,Paraguay,Uruguay,José Cea,53,FALSE,FALSE
+1924-10-26,Uruguay,Paraguay,Paraguay,Paisano Urbita Sosa,77,FALSE,FALSE
+1924-11-01,Chile,Paraguay,Chile,David Arellano,6,FALSE,FALSE
+1924-11-01,Chile,Paraguay,Paraguay,Ildefonso López,15,FALSE,FALSE
+1924-11-01,Chile,Paraguay,Paraguay,Ildefonso López,33,FALSE,FALSE
+1924-11-01,Chile,Paraguay,Paraguay,Gerardo Rivas,52,FALSE,FALSE
+1925-11-29,Argentina,Paraguay,Argentina,Manuel Seoane,2,FALSE,FALSE
+1925-11-29,Argentina,Paraguay,Argentina,Martin Sánchez,72,FALSE,FALSE
+1925-12-06,Brazil,Paraguay,Brazil,Anfilogino Marques,16,FALSE,FALSE
+1925-12-06,Brazil,Paraguay,Brazil,Arthur Friedenreich,18,FALSE,FALSE
+1925-12-06,Brazil,Paraguay,Paraguay,Gerardo Rivas,25,FALSE,FALSE
+1925-12-06,Brazil,Paraguay,Brazil,Severino Da Silva,30,FALSE,FALSE
+1925-12-06,Brazil,Paraguay,Brazil,Severino Da Silva,52,FALSE,FALSE
+1925-12-06,Brazil,Paraguay,Paraguay,Gerardo Rivas,55,FALSE,FALSE
+1925-12-06,Brazil,Paraguay,Brazil,Nilo Braga,72,FALSE,FALSE
+1925-12-13,Argentina,Brazil,Brazil,Nilo Braga,22,FALSE,FALSE
+1925-12-13,Argentina,Brazil,Argentina,Manuel Seoane,41,FALSE,FALSE
+1925-12-13,Argentina,Brazil,Argentina,Manuel Seoane,48,FALSE,FALSE
+1925-12-13,Argentina,Brazil,Argentina,Alfredo Garasini,72,FALSE,FALSE
+1925-12-13,Argentina,Brazil,Argentina,Manuel Seoane,74,FALSE,FALSE
+1925-12-17,Brazil,Paraguay,Brazil,Nilo Braga,30,FALSE,FALSE
+1925-12-17,Brazil,Paraguay,Brazil,Severino Da Silva,57,FALSE,FALSE
+1925-12-17,Brazil,Paraguay,Paraguay,Luis Fretes,58,FALSE,FALSE
+1925-12-17,Brazil,Paraguay,Brazil,Severino Da Silva,61,FALSE,FALSE
+1925-12-20,Argentina,Paraguay,Paraguay,Manuel Fleitas Solich,15,FALSE,FALSE
+1925-12-20,Argentina,Paraguay,Argentina,Domingo Tarasconi,22,FALSE,FALSE
+1925-12-20,Argentina,Paraguay,Argentina,Manuel Seoane,32,FALSE,FALSE
+1925-12-20,Argentina,Paraguay,Argentina,Juan Carlos Irurieta,63,FALSE,FALSE
+1925-12-25,Argentina,Brazil,Brazil,Arthur Friedenreich,27,FALSE,FALSE
+1925-12-25,Argentina,Brazil,Brazil,Nilo Braga,30,FALSE,FALSE
+1925-12-25,Argentina,Brazil,Argentina,Antonio Cerroti,41,FALSE,FALSE
+1925-12-25,Argentina,Brazil,Argentina,Manuel Seoane,55,FALSE,FALSE
+1926-10-12,Chile,Bolivia,Chile,Manuel Ramírez,10,FALSE,FALSE
+1926-10-12,Chile,Bolivia,Chile,Guillermo Subiabre,14,FALSE,FALSE
+1926-10-12,Chile,Bolivia,Chile,David Arellano,15,FALSE,FALSE
+1926-10-12,Chile,Bolivia,Chile,David Arellano,41,FALSE,FALSE
+1926-10-12,Chile,Bolivia,Chile,Humberto Moreno,47,FALSE,FALSE
+1926-10-12,Chile,Bolivia,Bolivia,Teófilo Aguilar,62,FALSE,FALSE
+1926-10-12,Chile,Bolivia,Chile,David Arellano,80,FALSE,FALSE
+1926-10-12,Chile,Bolivia,Chile,David Arellano,84,FALSE,FALSE
+1926-10-16,Argentina,Bolivia,Argentina,Roberto Cherro,9,FALSE,FALSE
+1926-10-16,Argentina,Bolivia,Argentina,Roberto Cherro,19,FALSE,FALSE
+1926-10-16,Argentina,Bolivia,Argentina,Gabino Sosa,31,FALSE,FALSE
+1926-10-16,Argentina,Bolivia,Argentina,Benjamín Delgado,43,FALSE,FALSE
+1926-10-16,Argentina,Bolivia,Argentina,Antonio de Miguel,74,FALSE,FALSE
+1926-10-17,Chile,Uruguay,Uruguay,René Borjas,22,FALSE,FALSE
+1926-10-17,Chile,Uruguay,Uruguay,Héctor Castro,32,FALSE,FALSE
+1926-10-17,Chile,Uruguay,Uruguay,Héctor Scarone,55,FALSE,FALSE
+1926-10-17,Chile,Uruguay,Chile,Guillermo Subiabre,65,FALSE,TRUE
+1926-10-20,Argentina,Paraguay,Argentina,Gabino Sosa,11,FALSE,FALSE
+1926-10-20,Argentina,Paraguay,Argentina,Roberto Cherro,16,FALSE,FALSE
+1926-10-20,Argentina,Paraguay,Argentina,Gabino Sosa,32,FALSE,FALSE
+1926-10-20,Argentina,Paraguay,Argentina,Benjamín Delgado,40,FALSE,FALSE
+1926-10-20,Argentina,Paraguay,Argentina,Benjamín Delgado,42,FALSE,FALSE
+1926-10-20,Argentina,Paraguay,Argentina,Antonio de Miguel,52,FALSE,FALSE
+1926-10-20,Argentina,Paraguay,Argentina,Gabino Sosa,59,FALSE,FALSE
+1926-10-20,Argentina,Paraguay,Argentina,Gabino Sosa,87,FALSE,FALSE
+1926-10-23,Bolivia,Paraguay,Bolivia,Carlos Soto,15,FALSE,FALSE
+1926-10-23,Bolivia,Paraguay,Paraguay,Ildefonso López,57,FALSE,FALSE
+1926-10-23,Bolivia,Paraguay,Paraguay,Ceferino Ramírez,68,FALSE,FALSE
+1926-10-23,Bolivia,Paraguay,Paraguay,Ceferino Ramírez,72,FALSE,FALSE
+1926-10-23,Bolivia,Paraguay,Paraguay,Pablo Ramírez,76,FALSE,FALSE
+1926-10-23,Bolivia,Paraguay,Paraguay,Ildefonso López,81,FALSE,FALSE
+1926-10-23,Bolivia,Paraguay,Paraguay,Ceferino Ramírez,88,FALSE,FALSE
+1926-10-24,Argentina,Uruguay,Uruguay,René Borjas,22,FALSE,FALSE
+1926-10-24,Argentina,Uruguay,Uruguay,Héctor Castro,73,FALSE,FALSE
+1926-10-28,Bolivia,Uruguay,Uruguay,Héctor Scarone,9,FALSE,FALSE
+1926-10-28,Bolivia,Uruguay,Uruguay,Héctor Scarone,12,FALSE,FALSE
+1926-10-28,Bolivia,Uruguay,Uruguay,Héctor Scarone,28,FALSE,FALSE
+1926-10-28,Bolivia,Uruguay,Uruguay,Héctor Scarone,39,FALSE,FALSE
+1926-10-28,Bolivia,Uruguay,Uruguay,Ángel Romano,67,FALSE,FALSE
+1926-10-28,Bolivia,Uruguay,Uruguay,Héctor Scarone,81,FALSE,FALSE
+1926-10-31,Chile,Argentina,Chile,Guillermo Saavedra,25,FALSE,FALSE
+1926-10-31,Chile,Argentina,Argentina,Domingo Tarasconi,87,FALSE,FALSE
+1926-11-01,Paraguay,Uruguay,Uruguay,Héctor Castro,16,FALSE,FALSE
+1926-11-01,Paraguay,Uruguay,Uruguay,Héctor Castro,23,FALSE,FALSE
+1926-11-01,Paraguay,Uruguay,Uruguay,Héctor Castro,32,FALSE,FALSE
+1926-11-01,Paraguay,Uruguay,Uruguay,Zoilo Saldombide,47,FALSE,TRUE
+1926-11-01,Paraguay,Uruguay,Paraguay,Manuel Fleitas Solich,58,FALSE,TRUE
+1926-11-01,Paraguay,Uruguay,Uruguay,Héctor Castro,72,FALSE,FALSE
+1926-11-01,Paraguay,Uruguay,Uruguay,Zoilo Saldombide,82,FALSE,FALSE
+1926-11-03,Chile,Paraguay,Chile,David Arellano,21,FALSE,FALSE
+1926-11-03,Chile,Paraguay,Paraguay,Luis Vargas Peña,40,FALSE,FALSE
+1926-11-03,Chile,Paraguay,Chile,Manuel Ramírez,42,FALSE,FALSE
+1926-11-03,Chile,Paraguay,Chile,David Arellano,64,FALSE,FALSE
+1926-11-03,Chile,Paraguay,Chile,David Arellano,71,FALSE,FALSE
+1926-11-03,Chile,Paraguay,Chile,Manuel Ramírez,82,FALSE,FALSE
+1927-10-30,Argentina,Bolivia,Argentina,Segundo Luna,18,FALSE,FALSE
+1927-10-30,Argentina,Bolivia,Argentina,Alfredo Carricaberry,20,FALSE,FALSE
+1927-10-30,Argentina,Bolivia,Argentina,Humberto Recanatini,24,FALSE,TRUE
+1927-10-30,Argentina,Bolivia,Argentina,Manuel Seoane,29,FALSE,FALSE
+1927-10-30,Argentina,Bolivia,Argentina,Alfredo Carricaberry,36,FALSE,FALSE
+1927-10-30,Argentina,Bolivia,Bolivia,Mario Alborta,42,FALSE,FALSE
+1927-10-30,Argentina,Bolivia,Argentina,Segundo Luna,56,FALSE,FALSE
+1927-10-30,Argentina,Bolivia,Argentina,Manuel Seoane,79,FALSE,FALSE
+1927-11-01,Peru,Uruguay,Uruguay,Daniel Ulloa,49,TRUE,FALSE
+1927-11-01,Peru,Uruguay,Uruguay,Antonio Sacco,52,FALSE,FALSE
+1927-11-01,Peru,Uruguay,Uruguay,Antonio Sacco,71,FALSE,FALSE
+1927-11-01,Peru,Uruguay,Uruguay,Héctor Castro,75,FALSE,FALSE
+1927-11-06,Bolivia,Uruguay,Uruguay,Pedro Petrone,18,FALSE,FALSE
+1927-11-06,Bolivia,Uruguay,Uruguay,Roberto Figueroa,19,FALSE,FALSE
+1927-11-06,Bolivia,Uruguay,Uruguay,Juan Arremón,43,FALSE,FALSE
+1927-11-06,Bolivia,Uruguay,Uruguay,Pedro Petrone,65,FALSE,FALSE
+1927-11-06,Bolivia,Uruguay,Uruguay,Roberto Figueroa,67,FALSE,FALSE
+1927-11-06,Bolivia,Uruguay,Uruguay,Héctor Castro,68,FALSE,FALSE
+1927-11-06,Bolivia,Uruguay,Uruguay,Roberto Figueroa,69,FALSE,FALSE
+1927-11-06,Bolivia,Uruguay,Uruguay,Pedro Petrone,81,FALSE,FALSE
+1927-11-06,Bolivia,Uruguay,Uruguay,Héctor Scarone,86,FALSE,FALSE
+1927-11-13,Peru,Bolivia,Bolivia,José Bustamante,13,FALSE,FALSE
+1927-11-13,Peru,Bolivia,Bolivia,José Bustamante,14,FALSE,FALSE
+1927-11-13,Peru,Bolivia,Peru,Demetrio Neyra,31,FALSE,FALSE
+1927-11-13,Peru,Bolivia,Peru,Jorge Sarmiento,41,FALSE,FALSE
+1927-11-13,Peru,Bolivia,Peru,Alberto Montellanos,43,FALSE,FALSE
+1927-11-20,Argentina,Uruguay,Uruguay,Héctor Scarone,33,FALSE,FALSE
+1927-11-20,Argentina,Uruguay,Argentina,Humberto Recanatini,56,FALSE,TRUE
+1927-11-20,Argentina,Uruguay,Argentina,Segundo Luna,70,FALSE,FALSE
+1927-11-20,Argentina,Uruguay,Uruguay,Héctor Scarone,79,FALSE,FALSE
+1927-11-20,Argentina,Uruguay,Argentina,Adhemar Canavesi,85,TRUE,FALSE
+1927-11-27,Peru,Argentina,Argentina,Manuel Ferreira,1,FALSE,FALSE
+1927-11-27,Peru,Argentina,Peru,Alejandro Villanueva,3,FALSE,FALSE
+1927-11-27,Peru,Argentina,Argentina,Juan Maglio,22,FALSE,FALSE
+1927-11-27,Peru,Argentina,Argentina,Juan Maglio,25,FALSE,FALSE
+1927-11-27,Peru,Argentina,Argentina,Manuel Ferreira,30,FALSE,FALSE
+1927-11-27,Peru,Argentina,Argentina,Alfredo Carricaberry,38,FALSE,FALSE
+1928-05-27,Belgium,Luxembourg,Belgium,Raymond Braine,9,FALSE,FALSE
+1928-05-27,Belgium,Luxembourg,Belgium,Louis Versijp,20,FALSE,FALSE
+1928-05-27,Belgium,Luxembourg,Belgium,Jacques Moeschal,23,FALSE,FALSE
+1928-05-27,Belgium,Luxembourg,Luxembourg,Guillaume Schutz,31,FALSE,FALSE
+1928-05-27,Belgium,Luxembourg,Luxembourg,Jean-Pierre Weisgerber,42,FALSE,FALSE
+1928-05-27,Belgium,Luxembourg,Luxembourg,Robert Theissen,44,FALSE,FALSE
+1928-05-27,Belgium,Luxembourg,Belgium,Jacques Moeschal,67,FALSE,FALSE
+1928-05-27,Belgium,Luxembourg,Belgium,Raymond Braine,72,FALSE,FALSE
+1928-05-27,Portugal,Chile,Chile,Guillermo Saavedra,14,FALSE,FALSE
+1928-05-27,Portugal,Chile,Chile,Alejandro Carbonell,30,FALSE,FALSE
+1928-05-27,Portugal,Chile,Portugal,Vítor Silva,38,FALSE,FALSE
+1928-05-27,Portugal,Chile,Portugal,Pepe Soares,40,FALSE,FALSE
+1928-05-27,Portugal,Chile,Portugal,Pepe Soares,50,FALSE,FALSE
+1928-05-27,Portugal,Chile,Portugal,Valdemar Mota,63,FALSE,FALSE
+1928-05-28,Egypt,Turkey,Egypt,Ali El-Hassany,20,FALSE,TRUE
+1928-05-28,Egypt,Turkey,Egypt,Ali Mohamed Riad,27,FALSE,FALSE
+1928-05-28,Egypt,Turkey,Egypt,Mahmoud Mokhtar El-Tetsh,46,FALSE,FALSE
+1928-05-28,Egypt,Turkey,Egypt,Mahmoud Mokhtar El-Tetsh,50,FALSE,FALSE
+1928-05-28,Egypt,Turkey,Egypt,Ismail El-Sayed Hooda,53,FALSE,FALSE
+1928-05-28,Egypt,Turkey,Egypt,Mahmoud Mokhtar El-Tetsh,63,FALSE,FALSE
+1928-05-28,Egypt,Turkey,Turkey,Bekir Refet,71,FALSE,FALSE
+1928-05-28,Egypt,Turkey,Egypt,Gamil El-Zobeir,86,FALSE,FALSE
+1928-05-28,Germany,Switzerland,Germany,Richard Hofmann,17,FALSE,FALSE
+1928-05-28,Germany,Switzerland,Germany,Josef Hornauer,42,FALSE,FALSE
+1928-05-28,Germany,Switzerland,Germany,Richard Hofmann,75,FALSE,FALSE
+1928-05-28,Germany,Switzerland,Germany,Richard Hofmann,85,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Manuel Ferreira,9,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Domingo Tarasconi,24,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Manuel Ferreira,29,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Raimondo Orsi,41,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Roberto Cherro,47,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Roberto Cherro,49,FALSE,FALSE
+1928-05-29,Argentina,United States,United States,Rudolph Kuntner,55,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Roberto Cherro,57,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Domingo Tarasconi,63,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Domingo Tarasconi,66,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Raimondo Orsi,73,FALSE,FALSE
+1928-05-29,Argentina,United States,United States,Henry Carroll,75,FALSE,FALSE
+1928-05-29,Argentina,United States,Argentina,Domingo Tarasconi,89,FALSE,FALSE
+1928-05-29,Italy,France,France,Juste Brouzes,15,FALSE,FALSE
+1928-05-29,Italy,France,France,Juste Brouzes,17,FALSE,FALSE
+1928-05-29,Italy,France,Italy,Gino Rossetti,19,FALSE,FALSE
+1928-05-29,Italy,France,Italy,Virgilio Levratto,39,FALSE,FALSE
+1928-05-29,Italy,France,Italy,Elvio Banchero,43,FALSE,FALSE
+1928-05-29,Italy,France,Italy,Adolfo Baloncieri,60,FALSE,FALSE
+1928-05-29,Italy,France,France,Robert Dauphin,61,FALSE,FALSE
+1928-05-29,Portugal,Yugoslavia,Portugal,Vítor Silva,25,FALSE,FALSE
+1928-05-29,Portugal,Yugoslavia,Yugoslavia,Mirko Bonačić,40,FALSE,FALSE
+1928-05-29,Portugal,Yugoslavia,Portugal,Augusto Silva,90,FALSE,FALSE
+1928-05-30,Netherlands,Uruguay,Uruguay,Héctor Scarone,20,FALSE,FALSE
+1928-05-30,Netherlands,Uruguay,Uruguay,Santos Urdinarán,86,FALSE,FALSE
+1928-05-30,Spain,Mexico,Spain,Luis Regueiro,13,FALSE,FALSE
+1928-05-30,Spain,Mexico,Spain,Luis Regueiro,27,FALSE,FALSE
+1928-05-30,Spain,Mexico,Spain,José Maria Yermo,43,FALSE,FALSE
+1928-05-30,Spain,Mexico,Spain,José Maria Yermo,63,FALSE,FALSE
+1928-05-30,Spain,Mexico,Spain,Martín Marculeta,66,FALSE,FALSE
+1928-05-30,Spain,Mexico,Spain,Ángel Mariscal,70,FALSE,FALSE
+1928-05-30,Spain,Mexico,Mexico,Juan Carreño,76,FALSE,FALSE
+1928-05-30,Spain,Mexico,Spain,José Maria Yermo,85,FALSE,FALSE
+1928-06-01,Italy,Spain,Spain,Domingo Zaldua,11,FALSE,FALSE
+1928-06-01,Italy,Spain,Italy,Adolfo Baloncieri,63,FALSE,FALSE
+1928-06-02,Argentina,Belgium,Argentina,Domingo Tarasconi,1,FALSE,FALSE
+1928-06-02,Argentina,Belgium,Argentina,Manuel Ferreira,4,FALSE,FALSE
+1928-06-02,Argentina,Belgium,Argentina,Domingo Tarasconi,10,FALSE,FALSE
+1928-06-02,Argentina,Belgium,Belgium,Raymond Braine,24,FALSE,FALSE
+1928-06-02,Argentina,Belgium,Belgium,Florimond Vanhalme,28,FALSE,FALSE
+1928-06-02,Argentina,Belgium,Belgium,Jacques Moeschal,53,FALSE,FALSE
+1928-06-02,Argentina,Belgium,Argentina,Domingo Tarasconi,75,FALSE,FALSE
+1928-06-02,Argentina,Belgium,Argentina,Raimondo Orsi,81,FALSE,FALSE
+1928-06-02,Argentina,Belgium,Argentina,Domingo Tarasconi,89,FALSE,FALSE
+1928-06-03,Uruguay,Germany,Uruguay,Pedro Petrone,35,FALSE,FALSE
+1928-06-03,Uruguay,Germany,Uruguay,Pedro Petrone,39,FALSE,FALSE
+1928-06-03,Uruguay,Germany,Uruguay,Héctor Castro,63,FALSE,FALSE
+1928-06-03,Uruguay,Germany,Germany,Richard Hofmann,81,FALSE,FALSE
+1928-06-03,Uruguay,Germany,Uruguay,Pedro Petrone,84,FALSE,FALSE
+1928-06-04,Egypt,Portugal,Egypt,Mahmoud Mokhtar El-Tetsh,15,FALSE,FALSE
+1928-06-04,Egypt,Portugal,Egypt,Ali Mohamed Riad,48,FALSE,FALSE
+1928-06-04,Egypt,Portugal,Portugal,Vítor Silva,76,FALSE,FALSE
+1928-06-04,Italy,Spain,Italy,Mario Magnozzi,14,FALSE,FALSE
+1928-06-04,Italy,Spain,Italy,Angelo Schiavo,15,FALSE,FALSE
+1928-06-04,Italy,Spain,Italy,Adolfo Baloncieri,18,FALSE,FALSE
+1928-06-04,Italy,Spain,Italy,Fulvio Bernardini,40,FALSE,FALSE
+1928-06-04,Italy,Spain,Spain,José Maria Yermo,47,FALSE,FALSE
+1928-06-04,Italy,Spain,Italy,Enrico Rivolta,72,FALSE,FALSE
+1928-06-04,Italy,Spain,Italy,Virgilio Levratto,76,FALSE,FALSE
+1928-06-04,Italy,Spain,Italy,Virgilio Levratto,77,FALSE,FALSE
+1928-06-05,Chile,Mexico,Mexico,Ernesto Sota,15,FALSE,FALSE
+1928-06-05,Chile,Mexico,Chile,Guillermo Subiabre,24,FALSE,FALSE
+1928-06-05,Chile,Mexico,Chile,Guillermo Subiabre,48,FALSE,FALSE
+1928-06-05,Chile,Mexico,Chile,Guillermo Subiabre,89,FALSE,FALSE
+1928-06-05,Netherlands,Belgium,Netherlands,Leonardus Ghering,4,FALSE,FALSE
+1928-06-05,Netherlands,Belgium,Netherlands,Felix Smeets,6,FALSE,FALSE
+1928-06-05,Netherlands,Belgium,Netherlands,Wim Tap,63,FALSE,FALSE
+1928-06-05,Netherlands,Belgium,Belgium,Pierre Braine,85,FALSE,FALSE
+1928-06-06,Argentina,Egypt,Argentina,Roberto Cherro,10,FALSE,FALSE
+1928-06-06,Argentina,Egypt,Argentina,Manuel Ferreira,32,FALSE,FALSE
+1928-06-06,Argentina,Egypt,Argentina,Domingo Tarasconi,37,FALSE,FALSE
+1928-06-06,Argentina,Egypt,Argentina,Domingo Tarasconi,54,FALSE,FALSE
+1928-06-06,Argentina,Egypt,Argentina,Domingo Tarasconi,61,FALSE,FALSE
+1928-06-06,Argentina,Egypt,Argentina,Manuel Ferreira,82,FALSE,FALSE
+1928-06-07,Uruguay,Italy,Italy,Adolfo Baloncieri,9,FALSE,FALSE
+1928-06-07,Uruguay,Italy,Uruguay,Pedro Cea,17,FALSE,FALSE
+1928-06-07,Uruguay,Italy,Uruguay,Antonio Campolo,28,FALSE,FALSE
+1928-06-07,Uruguay,Italy,Uruguay,Héctor Scarone,31,FALSE,FALSE
+1928-06-07,Uruguay,Italy,Italy,Virgilio Levratto,60,FALSE,FALSE
+1928-06-08,Netherlands,Chile,Chile,Manuel Bravo Paredes,55,FALSE,FALSE
+1928-06-08,Netherlands,Chile,Netherlands,Leonardus Ghering,59,FALSE,FALSE
+1928-06-08,Netherlands,Chile,Netherlands,Felix Smeets,66,FALSE,FALSE
+1928-06-08,Netherlands,Chile,Chile,Óscar Alfaro,89,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Angelo Schiavo,6,FALSE,FALSE
+1928-06-09,Italy,Egypt,Egypt,Ali Mohamed Riad,12,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Adolfo Baloncieri,14,FALSE,FALSE
+1928-06-09,Italy,Egypt,Egypt,Ali Mohamed Riad,16,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Elvio Banchero,19,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Elvio Banchero,39,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Angelo Schiavo,42,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Elvio Banchero,44,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Adolfo Baloncieri,52,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Angelo Schiavo,58,FALSE,FALSE
+1928-06-09,Italy,Egypt,Egypt,Moussa Hassan El-Ezam,60,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Mario Magnozzi,72,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Mario Magnozzi,80,FALSE,FALSE
+1928-06-09,Italy,Egypt,Italy,Mario Magnozzi,88,FALSE,FALSE
+1928-06-10,Uruguay,Argentina,Uruguay,Pedro Petrone,23,FALSE,FALSE
+1928-06-10,Uruguay,Argentina,Argentina,Manuel Ferreira,50,FALSE,FALSE
+1928-06-13,Uruguay,Argentina,Uruguay,Roberto Figueroa,17,FALSE,FALSE
+1928-06-13,Uruguay,Argentina,Argentina,Luis Monti,28,FALSE,FALSE
+1928-06-13,Uruguay,Argentina,Uruguay,Héctor Scarone,73,FALSE,FALSE
+1928-07-25,Latvia,Lithuania,Latvia,Arkādijs Pavlovs,2,FALSE,FALSE
+1928-07-25,Latvia,Lithuania,Latvia,Alberts Vaters,25,FALSE,FALSE
+1928-07-25,Latvia,Lithuania,Latvia,Alberts Vaters,66,FALSE,FALSE
+1928-07-26,Estonia,Lithuania,Estonia,Arnold Pihlak,1,FALSE,TRUE
+1928-07-26,Estonia,Lithuania,Estonia,Helmuth Räästas,14,FALSE,FALSE
+1928-07-26,Estonia,Lithuania,Estonia,Arnold Pihlak,21,FALSE,FALSE
